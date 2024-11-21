@@ -1,0 +1,31 @@
+
+
+https://docs.micropython.org/en/v1.18/esp32/tutorial/intro.html#deploying-the-firmware
+
+pip  install  esptool
+sudo  apt  install  esptool
+
+# 擦除 flash記憶體
+esptool.py --port /dev/ttyUSB0 erase_flash
+
+# 燒錄新的韌體
+esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-20220117-v1.18.bin
+
+# 若多次失敗，設較低速度 （ --baud 115200 ）
+esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 115200 write_flash -z 0x1000 esp32-20220117-v1.18.bin
+
+
+#=============================================================================================
+https://micropython.org/download/esp32/
+https://micropython.org/resources/firmware/esp32-20220117-v1.18.bin
+#=============================================================================================
+# 如果您是第一次將 MicroPython 放在您的板上，那麼您應該首先使用以下命令擦除整個閃存：
+esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash
+
+#=============================================================================================
+
+# 燒錄新的韌體，從地址 0x1000 開始：
+esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 esp32-20220117-v1.18.bin
+
+
+

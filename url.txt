@@ -1,0 +1,43 @@
+
+# thonny
+https://thonny.org/
+
+https://github.com/thonny/thonny/releases/download/v3.3.13/thonny-3.3.13.exe
+https://github.com/thonny/thonny/releases/tag/v4.0.0b3
+
+
+# UART 驅動程式
+https://reurl.cc/oL9X5V
+https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers
+
+
+https://micropython.org/download/#esp32
+
+https://docs.micropython.org/en/v1.18/esp32/tutorial/intro.html
+
+https://github.com/micropython/micropython
+
+
+https://github.com/espressif/esptool/ 
+pip install esptool
+
+
+
+# firmware
+https://github.com/micropython/micropython/releases/tag/v1.18
+
+https://micropython.org/download/esp32/
+https://micropython.org/resources/firmware/esp32-20220117-v1.18.bin
+
+https://micropython.org/download/esp32-ota/
+https://micropython.org/resources/firmware/esp32-ota-20220117-v1.18.bin
+
+
+# ampy
+https://pypi.org/project/adafruit-ampy/
+https://github.com/scientifichackers/ampy
+
+
+# micropython  library
+https://docs.micropython.org/en/v1.18/library/machine.PWM.html#machine-pwm
+

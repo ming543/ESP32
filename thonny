@@ -1,0 +1,52 @@
+
+https://thonny.org/
+
+https://github.com/thonny/thonny/releases/download/v3.3.13/thonny-3.3.13.exe
+https://github.com/thonny/thonny/releases/tag/v4.0.0b3
+#=============================================================================================
+
+sudo apt install thonny
+
+# ***** 下載安裝 UART 驅動程式 *****
+#  https://reurl.cc/oL9X5V
+
+#=============================================================================================
+# *****  安裝燒錄工具  *****
+#  工具 ->  管理外掛模組  ->  輸入 esptool  ->  按 "安裝"
+
+#=============================================================================================
+# ***** 下載韌體 *****
+https://micropython.org/resources/firmware/esp32-20220117-v1.18.bin
+
+#=============================================================================================
+# ***** 安裝韌體 *****
+#  工具 ->  選項  ->  直譯器   ->  Thonny應該....直譯器... 選 "MicroPython (ESP32)" 
+#   -> 連接埠 選 "CP2102 USB to UART Bridge Controller ...."
+#   -> 韌體 點一下 "...，安裝或升級設備裡的MicroPython"
+#   -> Port  選跟剛剛 連接埠 一樣 選 "CP2102 USB to UART Bridge Controller ...."
+#   -> 按 "Browse" 選下載好的 Firmware 檔案  esp32-20220117-v1.18.bin
+#   -> 按 "Install"
+#   
+# 若失敗則重燒，這時 按 "Install" 之前先按住 ESP32 上面的 "BOOT" 按鍵，不可鬆手，等到看見 Installing firmware 小視窗出現 寫入的百分比率時就可鬆手
+
+#=============================================================================================
+
+#  工具 ->  選項  ->  直譯器   ->  Thonny應該....直譯器... 選 "MicroPython (ESP32)" 
+#   -> 連接埠 選 "CP2102 USB to UART Bridge Controller ...."
+#   -> 按 "確認"
+
+#=============================================================================================
+
+# (shell)  MicroPython  
+from machine import Pin
+led=Pin(2,Pin.OUT)
+led.value(1)
+led.value(0)
+
+import time
+while True:
+    led.value(1)
+    time.sleep(0.5)
+    led.value(0)
+    time.sleep(0.5)
+	

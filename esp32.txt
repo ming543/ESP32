@@ -1,0 +1,68 @@
+
+
+https://docs.micropython.org/en/v1.18/esp32/general.html
+
+https://docs.micropython.org/en/v1.18/esp32/quickref.html
+
+MicroPython REPL is on UART0 (GPIO1=TX, GPIO3=RX) at baudrate 115200. 
+
+要善用 Tab-completion
+
+
+*****警告*****
+請注意： pin腳的輸入最大電壓為 3.6V 。接近這個邊界可能會損壞 IC！
+
+
+import machine
+cpu_frequency = machine.freq()
+print('CPU 頻率：{:d} MHz'.format( cpu_frequency //1000000 ))
+
+
+import esp32
+temp_Fahrenheit = esp32.raw_temperature()
+print('MCU 溫度：{:.2f}'.format( ( temp_Fahrenheit -32 ) * 5/9))
+
+GPIO 2, 4, 5, 12~19, 21~23, 25~27 總計 17 個 可用
+GPIO 0 Boot/flashing mode
+GPIO 1,3  REPL UART TX and RX ( 接 USB )
+GPIO 6-11 連外部 flash
+GPIO 34~39 僅 輸入模式，且沒有內部 pull-up 電阻
+GPIO 2 接板子上的 藍色 LED ，且沒有內部 pull-up 電阻
+
+              EN按鈕  boot按鈕
+              左PIN  右PIN 
+D12  GPIO 12    4      -
+D13  GPIO 13    3      -
+D14  GPIO 14    5      -
+D2   GPIO  2    -      4
+D4   GPIO  4    -      5
+D5   GPIO  5    -      8
+D15  GPIO 15    -      3  
+RX2  GPIO 16    -      6
+TX2  GPIO 17    -      7
+D18  GPIO 18    -      9
+D19  GPIO 19    -     10
+D21  GPIO 21    -     11
+D22  GPIO 22    -     14
+D23  GPIO 23    -     15
+D25  GPIO 25    8      -
+D26  GPIO 26    7      -
+D27  GPIO 27    6      -
+D32  GPIO 32   10      -
+D33  GPIO 33    9      -
+D34  GPIO 34   12      -
+D35  GPIO 35   11      -
+UP   GPIO 36   14      -
+UN   GPIO 39   13      -
+
+
+
+
+https://docs.micropython.org/en/v1.18/esp32/quickref.html#pins-and-gpio
+
+
+
+
+
+
+

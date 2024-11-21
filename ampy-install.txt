@@ -1,0 +1,19 @@
+
+pip3 install adafruit-ampy
+
+ll /home/robert/.local/bin
+
+echo $PATH
+
+PATH=/home/robert/.local/bin:$PATH
+
+echo $PATH
+
+ampy --version
+
+ampy --help
+
+ampy -p /dev/ttyUSB0 get boot.py
+
+
+

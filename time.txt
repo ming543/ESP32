@@ -1,0 +1,15 @@
+
+import time
+time.localtime()
+
+
+
+from machine import RTC
+rtc=RTC()
+rtc.datetime()
+
+rtc.datetime( (2022, 6, 5, 20, 3,0,  0, 0) )
+rtc.datetime()
+
+
+
